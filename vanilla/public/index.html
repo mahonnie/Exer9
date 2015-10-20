@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Betel de Robles" />
+		<title> JS Example </title>
+		<script src="./data.js"></script>
+	</head>
+	<body>
+		<header> <h1>Movies</h1> </header>
+		<div id="content">
+		</div>
+</body>
+</html>
+
+		
+		</div>
+
+		<script type="text/javascript">
+
+		function printMovie(){
+			for(var i=0; i<10; i++){
+				var title = movies[i].title;
+				var year = movies[i].year;
+				var tyr = document.createTextNode(title + "( " + year + ")");
+				var desc = document.createTextNode(movies[i].description);
+				var rating = document.createTextNode(movies[i].rating);
+				var genre = document.createTextNode(movies[i].classification);
+				var direct = document.createTextNode(movies[i].director);
+
+				var movie = document.createElement("div");
+				movie.setAttribute("id", (i+1), toString());
+				var pic = document.createElement("img");
+				pic.setAttribute("src", movies[i].imgURL);
+				pic.setAttribute("alt", "Image");
+				movie.appendChild(tyr);
+				movie.appendChild(document.createElement("br"));
+				movie.appendChild(pic);
+				movie.appendChild(document.createElement("br"));
+				movie.appendChild(desc);
+				movie.appendChild(document.createElement("br"));
+				movie.appendChild(rating);
+				movie.appendChild(document.createElement("br"));
+				movie.appendChild(genre);
+				movie.appendChild(document.createElement("br"));
+				movie.appendChild(direct);
+				movie.appendChild(document.createElement("br"));
+
+				document.getElementById("content").appendChild(movie);
+			}
+		}
+
+		printMovie();
+		
+		</script>
+	</body>
+</html>
